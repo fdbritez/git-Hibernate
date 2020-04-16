@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d324cc20-6a34-434f-808b-2f0712724b00">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     f.`id_funcionario`,
+     f.`nombre_funcionario`,
+     f.`apellido_funcionario`,
+     f.`direccion_funcionario`,
+     f.`telefono_funcionario`,
+     f.`cargo_funcionario`
+FROM
+     `funcionario` f]]>
+	</queryString>
+	<field name="id_funcionario" class="java.lang.Integer"/>
+	<field name="nombre_funcionario" class="java.lang.String"/>
+	<field name="apellido_funcionario" class="java.lang.String"/>
+	<field name="direccion_funcionario" class="java.lang.String"/>
+	<field name="telefono_funcionario" class="java.lang.String"/>
+	<field name="cargo_funcionario" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="33" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="0259e6cc-52e9-4cff-8c02-b035ad3f6a7c" x="0" y="0" width="555" height="32" forecolor="#CCCCCC" backcolor="#CCCCCC"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="9780bcb9-f99c-4ccd-aade-ee5ecc9a73df" x="143" y="9" width="220" height="20"/>
+				<textElement>
+					<font fontName="Arial" size="13" isBold="true" isItalic="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[REPORTES DE  FUNCIONARIOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="27" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="f778cea9-5006-4134-92da-93f5c5e8b2c8" x="471" y="7" width="84" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="219eeef6-1a3a-4ec8-a265-730dfc963cf0" x="0" y="0" width="555" height="20" forecolor="#CCCCCC" backcolor="#CCCCCC"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="bb209a69-bd1c-4d07-8cfb-84772d896e65" x="7" y="1" width="20" height="20"/>
+				<textElement/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0dab9ba8-d527-4901-9c92-0660c54cd3ef" x="43" y="0" width="200" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nombre                       Apellido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fb923ed1-cc48-4c83-8280-38920dd2ce18" x="243" y="0" width="116" height="20"/>
+				<textElement/>
+				<text><![CDATA[Direccion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="162c6dd3-25ba-4ebc-ac3e-b8e5c1051c33" x="374" y="1" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Cargo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement uuid="58a2eef0-cc1c-496a-a682-8faafd403b7d" x="7" y="3" width="20" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{id_funcionario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0e28ac79-540d-431a-ae40-a6fa006e035a" x="143" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{apellido_funcionario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="20776463-61c8-4dbf-beb9-2217e01f4a52" x="243" y="1" width="116" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{direccion_funcionario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2cbaa39b-ee53-4c51-b370-33a3d9a7c6d7" x="374" y="1" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{cargo_funcionario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ab246995-17b2-4562-b729-5702cabc1a7d" x="42" y="1" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nombre_funcionario}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="9b8fce69-37b3-4b9a-8c24-d4e36a0ac797" x="0" y="2" width="555" height="22" forecolor="#CCCCCC" backcolor="#CCCCCC"/>
+			</rectangle>
+			<textField evaluationTime="Report">
+				<reportElement uuid="ffd60a7f-d8cb-47b4-8693-e269db225168" x="490" y="8" width="38" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8fabef05-c0d7-4074-8393-952f2c87a3f7" x="28" y="7" width="80" height="17"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="b85a6256-5696-4fc2-b34d-2a537dc550be" x="108" y="7" width="40" height="17"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
